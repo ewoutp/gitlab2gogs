@@ -9,20 +9,11 @@ ORGPATH := github.com/ewoutp
 ORGDIR := $(GOBUILDDIR)/src/$(ORGPATH)
 REPONAME := $(PROJECT)
 REPODIR := $(ORGDIR)/$(REPONAME)
-REPOPATH := $(ORGPATH)/$(REPONAME)
 BIN := $(BINDIR)/$(PROJECT)
 
 GOPATH := $(GOBUILDDIR)
 
 SOURCES := $(shell find $(SRCDIR) -name '*.go')
-
-ifndef GOOS
-	GOOS := $(shell go env GOOS)
-endif
-ifndef GOARCH
-	GOARCH := $(shell go env GOARCH)
-endif
-
 
 .PHONY: clean test
 
