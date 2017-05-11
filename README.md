@@ -17,5 +17,7 @@ Usage:
 ```
 
 Organizations are created if they do not yet exists.
+
 Users are created if they do not yet exists.
+
 Existing repositories (in Gogs) are not overwritten.
