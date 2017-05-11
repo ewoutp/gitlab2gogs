@@ -25,8 +25,9 @@ clean:
 .gobuild:
 	mkdir -p $(ORGDIR)
 	rm -f $(REPODIR) && ln -s ../../../../src $(REPODIR)
-	git clone git@github.com:ewoutp/go-gitlab-client.git $(GOBUILDDIR)/src/github.com/ewoutp/go-gitlab-client
-	git clone git@github.com:gogits/go-gogs-client.git $(GOBUILDDIR)/src/github.com/gogits/go-gogs-client
+	git clone https://github.com/xanzy/go-gitlab.git $(GOBUILDDIR)/src/github.com/xanzy/go-gitlab -b f-api-v4
+	git clone https://github.com/gogits/go-gogs-client.git $(GOBUILDDIR)/src/github.com/gogits/go-gogs-client
+	git clone https://github.com/google/go-querystring.git $(GOBUILDDIR)/src/github.com/google/go-querystring
 
 $(BIN): .gobuild $(SOURCES)
 	go build -a -o $(PROJECT)
