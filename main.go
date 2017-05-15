@@ -7,6 +7,7 @@ import (
 
 	"github.com/ewoutp/go-gitlab-client"
 	"github.com/gogits/go-gogs-client"
+	"strings"
 )
 
 var (
@@ -96,6 +97,7 @@ func main() {
 }
 
 func fixName(name string) string {
+	name = strings.Replace(name, " ", "_", -1)
 	switch name {
 	case "api": // reserved
 		return "theapi"
